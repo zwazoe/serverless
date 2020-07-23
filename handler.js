@@ -1,16 +1,16 @@
-'use strict';
+"use strict";
 
-module.exports.helloWorld = (event, context, callback) => {
-  const response = {
+module.exports.availableNumbers = (event, context, callback) => {
+  let payload = {
+    phone_number: "555-555-5555",
+  };
+  const res = {
     statusCode: 200,
     headers: {
-      'Access-Control-Allow-Origin': '*', // Required for CORS support to work
+      "Access-Control-Allow-Origin": "*",
     },
-    body: JSON.stringify({
-      message: 'Go Serverless v1.0! Your function executed successfully!',
-      input: event,
-    }),
+    body: JSON.stringify(payload),
   };
 
-  callback(null, response);
+  callback(null, res);
 };
